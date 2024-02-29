@@ -1,0 +1,27 @@
+# https://www.robotstxt.org/robotstxt.html
+ 
+User-agent: *
+
+Allow: /
+
+Allow: /*.js
+
+Allow: /*.css
+
+Allow: /*.png
+
+Allow: /*.svg
+
+Allow: /*.woff
+
+Allow: /*.woff2
+
+Allow: /*.ttf
+
+Allow: /*.jpg
+
+Allow: /*.jpeg
+
+Allow: /*.gif
+
+Sitemap: https://cowchain.io/sitemap.xml

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://cowchain.io/</loc> </url>
+<url> <loc>https://cowchain.io/</loc> </url>
+<url> <loc>https://cowchain.io/clients</loc> </url>
+<url> <loc>https://cowchain.io/cases</loc> </url>
+<url> <loc>https://cowchain.io/cases/payment</loc> </url>
+<url> <loc>https://cowchain.io/cases/wallet</loc> </url>
+<url> <loc>https://cowchain.io/cases/hotel</loc> </url>
+<url> <loc>https://cowchain.io/cases/finance</loc> </url>
+<url> <loc>https://cowchain.io/cases/move</loc> </url>
+<url> <loc>https://cowchain.io/cases/bridge</loc> </url>
+<url> <loc>https://cowchain.io/blog/article</loc> </url>
+<url> <loc>https://cowchain.io/services</loc> </url>
+<url> <loc>https://cowchain.io/team</loc> </url>
+<url> <loc>https://cowchain.io/policy</loc> </url>
+</urlset>
