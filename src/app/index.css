@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+@import "/node_modules/react-modal-video/scss/modal-video.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #000;
+  margin: 0;
+  font-family:
+    "Manrope",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Text styles */
+
+h1 {
+  @apply font-roc text-5xl font-medium leading-tight text-white md:text-6xl lg:text-[80px];
+}
+
+h2 {
+  @apply font-roc text-base font-medium uppercase leading-tight text-white md:text-lg md:leading-none lg:text-2xl lg:leading-[90%];
+}
+
+h3 {
+  @apply font-roc text-4xl font-medium leading-tight text-white md:text-5xl lg:text-[60px];
+}
+
+h4 {
+  @apply font-roc text-2xl  font-medium uppercase leading-[90%] lg:text-[28px] xl:text-[32px];
+}
+
+p,
+.p {
+  @apply text-sm font-normal  leading-normal text-white md:text-base;
+}
+
+.header {
+  @apply font-roc text-lg font-medium uppercase underline md:text-xl lg:text-2xl;
+}
+
+.body {
+  @apply text-xs font-normal leading-relaxed text-white md:text-sm lg:text-base;
+}
+
+.body1 {
+  @apply text-sm font-medium text-white md:text-base;
+}
+
+.body2 {
+  @apply text-xs font-light leading-snug text-white;
+}
+
+.body3 {
+  @apply font-roc text-2xl font-medium leading-tight;
+}
+
+.caption {
+  @apply text-xs font-normal text-th-grey md:text-sm;
+}
+
+.markup {
+  @apply font-roc text-base font-medium leading-[90%] md:text-lg lg:text-xl xl:text-2xl;
+}
+
+.num_lg {
+  @apply font-roc text-4xl font-medium leading-tight text-white md:text-[42px] lg:text-5xl;
+}
+
+.error-span {
+  @apply text-base font-bold text-red-500;
+}
+
+.navlink {
+  @apply font-roc text-sm font-medium uppercase leading-none text-white;
+}
+
+/* Paddings */
+
+.fullheight {
+  height: calc(100vh - 6rem);
+}
+
+@media (min-width: 768px) {
+  .fullheight {
+    height: calc(100vh - 4rem);
+  }
+}
+
+.px-default {
+  @apply px-4 md:px-8 lg:px-16 xl:px-24;
+}
+
+.mx-default {
+  @apply mx-4 md:mx-8 lg:mx-16 xl:mx-24;
+}
+
+.py-heading {
+  @apply py-16 lg:py-24 xl:py-32;
+}
+
+.my-heading {
+  @apply my-16 lg:my-24 xl:my-32;
+}
+
+/* Element styles */
+
+.btn-play {
+  @apply cursor-pointer rounded-full bg-white px-6 pb-[6px] pt-[10px] font-roc text-sm font-medium uppercase leading-none text-black;
+}
+
+.btn-contact {
+  @apply flex h-36 w-36 cursor-pointer   items-center justify-center rounded-full bg-white text-center font-roc text-base font-medium uppercase text-black;
+  transition:
+    color 0.3s,
+    background-color 0.3s ease-in-out;
+}
+
+.btn-contact-case {
+  @apply absolute right-5 flex h-24 w-24 cursor-pointer items-center justify-center rounded-full bg-white text-center font-roc text-base font-medium uppercase text-black;
+  transition:
+    color 0.3s,
+    background-color 0.3s ease-in-out;
+}
+
+.btn-submit:hover {
+  @apply bg-[#ffffff10] text-white;
+}
+
+.btn-submit {
+  @apply flex h-12 cursor-pointer items-center justify-center bg-white px-8 pt-1 text-center font-roc text-sm font-medium uppercase text-black lg:h-16;
+  transition:
+    color 0.3s,
+    background-color 0.3s ease-in-out;
+}
+
+.md-border-r {
+  @apply md:border-r md:border-r-th-fade;
+}
+
+.violet-gradient-text {
+  background: linear-gradient(146deg, #e9bbff 32.8%, #8e66ff 61.09%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Interactive */
+
+.popup-modal-overlay {
+  /*background: rgba(209, 24, 13, 0.8);*/
+  background: rgba(0, 0, 0, 0.8);
+  @apply px-4;
+}
+
+.form_label_for_check {
+  @apply border border-th-grey;
+}
+
+.form_label_div {
+  @apply px-4 pb-2 pt-3 font-roc text-base font-medium uppercase text-white;
+  transition:
+    background-color 300ms,
+    color 300ms linear;
+}
+
+.form_check {
+  @apply hidden;
+}
+
+.form_label_div:hover {
+  @apply border-white bg-white text-black;
+}
+
+.form_check:checked + .form_label_div {
+  @apply border-white bg-white text-black;
+}
+
+.userform .text_input {
+  @apply border-b border-b-th-grey bg-black py-4 text-base font-normal text-white;
+}
+
+.userform .text_input::placeholder {
+  @apply text-base font-normal text-secondary;
+  transition: color 100ms linear;
+}
+
+.userform .text_input:focus {
+  @apply border-b border-b-white bg-black outline-none;
+}
+
+.userform .text_input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.userform .text_input:focus:-moz-placeholder {
+  color: transparent;
+} /* FF 4-18 */
+.userform .text_input:focus::-moz-placeholder {
+  color: transparent;
+} /* FF 19+ */
+.userform .text_input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.userform .text_input:active {
+  @apply bg-black;
+}
+
+input:-internal-autofill-selected {
+  @apply !bg-black;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.footerform input {
+  @apply bg-[#ffffff10] px-4 py-3 font-roc text-base text-white;
+}
+
+.footerform input:placeholder {
+  @apply font-roc text-base font-normal text-white;
+}
+
+.footerform .text_input:focus {
+  @apply bg-[#ffffff10] outline-none;
+}
+
+.footerform .text_input:active {
+  @apply bg-[#ffffff10];
+}
+
+#footer .styles_faq-row__2YF3c {
+  @apply !border-none;
+}
+
+.footer-links p {
+  @apply text-[#bbb];
+}
+
+.footer-links p:hover {
+  @apply text-white;
+}
+
+.ant-select-selector {
+  background-color: transparent !important;
+  color: white !important;
+  border: none !important;
+}
+
+.ant-select-selector:focus {
+  border: none !important;
+}
+
+.ant-select-selection-item {
+  color: white !important;
+}
+
+.ant-select-arrow {
+  color: white !important;
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #000 !important;
+}
+
+.ant-select-popup {
+  background-color: black !important;
+  width: 120px !important;
+  border: #fff;
+  border-width: 1px !important;
+  border-style: solid;
+  border-radius: 0%;
+  margin-top: 5px !important;
+}
+
+.ant-space-item {
+  width: 20px !important;
+}
+
+.ant-popover-arrow {
+  width: 0px !important;
+}
+
+.ant-popover-inner {
+  min-width: 300px;
+  margin-right: 20px;
+  border-radius: 0px !important;
+  border-color: white !important;
+  border-width: 1px !important;
+  background-color: #000 !important;
+}
+
+.mask {
+  backface-visibility: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8e66ff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+@media (min-width: 1024px) {
+  .ant-popover-inner {
+    min-width: 399px;
+    margin-right: 90px;
+    border-radius: 0px !important;
+    border-color: white !important;
+    border-width: 1px !important;
+    background-color: #000 !important;
+  }
+}
+
+.section-rendered {
+  visibility: hidden;
+}
+
+.quote_wrapper,
+.cases_wrapper {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+}
+
+.quote_wrapper::-webkit-scrollbar,
+.cases_wrapper::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.clients-projects-marker {
+  transform-origin: top left;
+  transform: scale(1);
+  transition:
+    color 0.3s,
+    transform 0.3s linear;
+}
+
+.clients-projects-marker[active="true"] {
+  transform-origin: top left;
+  transform: scale(2);
+  @apply mb-6 text-white;
+}
+
+.scroll-container {
+  position: sticky;
+  left: 0;
+  right: 0;
+  will-change: transform;
+}
+
+.scroll-container .ghost {
+  width: 100vw;
+}

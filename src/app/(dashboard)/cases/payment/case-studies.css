@@ -1,0 +1,40 @@
+.section-rendered {
+  visibility: hidden;
+}
+
+.quote_wrapper,
+.cases_wrapper {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+}
+
+.quote_wrapper::-webkit-scrollbar,
+.cases_wrapper::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.clients-projects-marker {
+  transform-origin: top left;
+  transform: scale(1);
+  transition:
+    color 0.3s,
+    transform 0.3s linear;
+}
+
+.clients-projects-marker[active="true"] {
+  transform-origin: top left;
+  transform: scale(2);
+  @apply mb-6 text-white;
+}
+
+.scroll-container {
+  position: sticky;
+  left: 0;
+  right: 0;
+  will-change: transform;
+}
+
+.scroll-container .ghost {
+  width: 100vw;
+}
