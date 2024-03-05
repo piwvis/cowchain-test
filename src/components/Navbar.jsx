@@ -6,6 +6,7 @@ import menu_open from "@/assets/menu_open.svg";
 import menu_close from "@/assets/homepage/modal_close.svg";
 import bg from "@/assets/bg/navbar_top.png";
 import bg_lg from "@/assets/bg/navbar_top_lg.png";
+import bg_home from "@/assets/homepage/home-mobile.png";
 import bg_clients from "@/assets/bg/clients_navbar_bg_sm.png";
 import bg_clients_lg from "@/assets/bg/clients_navbar_bg_lg.png";
 import { motion, AnimatePresence } from "framer-motion";
@@ -158,14 +159,14 @@ export default function Navbar({ isPageNotFound = false }) {
               )}
               src={bg_lg}
             />
-            <img
+            <Image
               className={cn(
                 "absolute bottom-0 left-0 block h-full w-full md:hidden",
                 {
-                  hidden: !isGradient
+                  hidden: isGradient
                 }
               )}
-              src={"/homepage/home-mobile.png"}
+              src={bg_home}
               alt=""
             />
           </>

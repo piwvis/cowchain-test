@@ -44,7 +44,7 @@ const benefitsData = [
 
     initialStyle:
       "max-h-max h-[250px] border-b border-b-th-fade  bg-cover bg-center bg-no-repeat -translate-y-[220%] duration-1000",
-    style: { backgroundImage: `url(${bg})` },
+    style: { backgroundImage: `url(${bg.src})` },
     textStyle: "text-transparent"
   }
 ];

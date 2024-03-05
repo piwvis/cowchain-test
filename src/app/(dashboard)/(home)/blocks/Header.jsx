@@ -1,10 +1,11 @@
-
 import upwork from "@/assets/homepage/upwork.svg";
 import clutch from "@/assets/homepage/clutch.svg";
 import bg_top from "@/assets/bg/header_top.png";
 import bg_top_lg from "@/assets/bg/header_top_lg.png";
-import Video from "./Video";
 import Image from "next/image";
+import { lazy } from "react";
+
+const Video = lazy(() => import("./Video"));
 
 const Header = () => {
   return (
