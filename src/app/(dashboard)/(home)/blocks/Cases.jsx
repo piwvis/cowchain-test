@@ -131,7 +131,7 @@ const Cases = () => {
         >
           {projectsData &&
             projectsData.map((project, index) => (
-              <ScrollProject index={index} {...project} />
+              <ScrollProject key={index} index={index} {...project} />
             ))}
         </motion.div>
       </div>
