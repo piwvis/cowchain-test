@@ -1,7 +1,7 @@
-import { lazy } from "react";
+import dynamic from 'next/dynamic'
 
-const Header = lazy(() => import("./blocks/Header"));
-const HomeContent = lazy(() => import("./blocks/home-content"));
+const Header = dynamic(() => import("./blocks/Header"));
+const HomeContent = dynamic(() => import("./blocks/home-content"));
 
 export default function Page() {
   return (

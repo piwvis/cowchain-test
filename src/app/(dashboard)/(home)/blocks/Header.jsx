@@ -3,9 +3,9 @@ import clutch from "@/assets/homepage/clutch.svg";
 import bg_top from "@/assets/bg/header_top.png";
 import bg_top_lg from "@/assets/bg/header_top_lg.png";
 import Image from "next/image";
-import { lazy } from "react";
+import dynamic from 'next/dynamic'
 
-const Video = lazy(() => import("./Video"));
+const Video = dynamic(() => import("./Video"));
 
 const Header = () => {
   return (
@@ -24,7 +24,9 @@ const Header = () => {
             src={bg_top_lg}
           />
 
-           
+          <h1 className="relative mt-8 cursor-default uppercase md:mt-16 lg:mt-24">
+            We turn your startup ideas into viable Web3 businesses
+          </h1>
           <div className="mt-auto grid grid-cols-1 md:grid-cols-2">
             <div className="relative flex items-center md:gap-x-1">
               <a
