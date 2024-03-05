@@ -148,6 +148,7 @@ export default function Navbar({ isPageNotFound = false }) {
         {isHomePage ? (
           <>
             <Image
+              priority
               srcSet={`${bg} 360w, ${bg} 480w, ${bg} 720w, ${bg_lg} 1920w`}
               sizes="(max-width: 640px) 100vw, 100vw"
               alt=""
@@ -160,6 +161,8 @@ export default function Navbar({ isPageNotFound = false }) {
               src={bg_lg}
             />
             <Image
+              quality={100}
+              priority
               className={cn(
                 "absolute bottom-0 left-0 block h-full w-full md:hidden",
                 {
