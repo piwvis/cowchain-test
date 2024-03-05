@@ -1,14 +1,15 @@
 "use client";
 
-import Header from "./blocks/Header";
-import HomeContent from "./blocks/home-content";
+import { lazy } from "react";
+
+const Header = lazy(() => import("./blocks/Header"));
+const HomeContent = lazy(() => import("./blocks/home-content"));
 
 export default function Page() {
   return (
-    <>
-      {" "}
+    <div>
       <Header />
       <HomeContent />{" "}
-    </>
+    </div>
   );
 }

@@ -21,25 +21,54 @@ import team from "@/assets/bg/team.png";
 import { cn } from "@/lib/utils";
 import ContactForm from "@/components/utils/ContactForm";
 import Image from "next/image";
+import { useLoader } from "@/hooks/useLoader";
+import emailjs from "emailjs-com";
 
-export default function Navbar({ setBurgerOpen }) {
+export default function Navbar({ isPageNotFound = false }) {
+  const [burgerOpen, setBurgerOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = burgerOpen ? "hidden" : "visible";
+  }, []);
+
   const [openForm, setOpenForm] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [windowHeight, setWindowheight] = useState("");
-  const [isTeamBg, setIsTeamBg] = useState(true);
+  const [isTeamBg, setIsTeamBg] = useState(false);
   const [isGradient, setIsGradient] = useState(true);
-  const [isHomePage, setIsHomePage] = useState(false);
+  const [isHomePage, setIsHomePage] = useState(true);
 
   const pathname = usePathname();
+  const { isRendering, setIsLoading, setIsRendering } = useLoader();
+
+  useEffect(() => {
+    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+    emailjs.init(process.env.REACT_APP_DEV_EMAILJS_PUBLIC_KEY);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    setTimeout(() => {
+      setIsRendering(false);
+    }, 700);
+  }, []);
 
   useEffect(() => {
     setWindowheight(window.innerHeight);
     setIsHomePage(pathname === "/");
-    setIsTeamBg(pathname === "/team");
+    setIsGradient(
+      pathname === "/services" ||
+        pathname === "/cases" ||
+        pathname === "/clients" ||
+        pathname === "/policy"
+    );
+    setIsTeamBg(pathname === "/team" || pathname === "/sitemap");
+
     if (pathname === "/team") {
       setIsGradient(false);
+      setIsHomePage(false);
     }
-    console.log(isTeamBg);
+    isPageNotFound && setIsTeamBg(true);
   }, [pathname, isTeamBg, setIsGradient, setIsHomePage]);
 
   const sideVariants = {
@@ -109,9 +138,10 @@ export default function Navbar({ setBurgerOpen }) {
   return (
     <>
       <section
-        className={cn("relative  bg-transparent", {
+        className={cn("relative bg-transparent opacity-0", {
           "pb-36 md:pb-0": isHomePage,
-          "pb-[440px] lg:pb-[670px]": isTeamBg
+          "pb-[440px] lg:pb-[670px]": isTeamBg,
+          "opacity-100": !isRendering
         })}
       >
         {isHomePage ? (
@@ -163,6 +193,7 @@ export default function Navbar({ setBurgerOpen }) {
             <Image
               className="absolute top-0 hidden h-full w-full lg:block"
               alt="gradient"
+              priority
               src={team}
             />
           </>
@@ -260,10 +291,10 @@ export default function Navbar({ setBurgerOpen }) {
                     {anchorLinks.map((link, index) => (
                       <Link
                         key={index}
-                        to={link.link}
+                        href={link.link}
                         onClick={closeBurger}
                         variants={linkVariants}
-                        whileTap={{ scale: 0.95 }}
+                        whiletap={{ scale: 0.95 }}
                       >
                         <div className="flex items-center">
                           <p className="font-roc text-base font-medium uppercase text-white">
@@ -280,11 +311,11 @@ export default function Navbar({ setBurgerOpen }) {
                     {routerLinks.map((link, index) => (
                       <Link
                         key={index * 4}
-                        to={link.link}
+                        href={link.link}
                         onClick={closeBurger}
                         variants={linkVariants}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
+                        whilehover={{ scale: 1.1 }}
+                        whiletap={{ scale: 0.95 }}
                       >
                         <div className="flex items-center">
                           <p className="font-roc text-base font-medium uppercase text-white">

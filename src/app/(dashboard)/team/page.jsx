@@ -17,7 +17,7 @@ const photos = [team1, team2, team3];
 const Team = ({ setBurgerOpen }) => {
   return (
     <section className=" ">
-      <div className="scrollbar-none relative  bg-black">
+      <div className="scrollbar-none  bg-black">
         <HeroSection />
         <Values />
         <ValuesMobile />

@@ -1,7 +1,9 @@
 #load {
   position: absolute;
+  background: black;
+  z-index: 1000;
   width: 600px;
-  height: 36px;
+  height: h-screen;
   left: 50%;
   top: 40%;
   margin-left: -300px;

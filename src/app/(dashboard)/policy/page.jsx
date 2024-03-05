@@ -1,7 +1,5 @@
 import "./clients.css";
-import Navbar from "components/Navbar";
 import Header from "./blocks/Header";
-import { Footer } from "components/Footer";
 
 const policy = [
   {
@@ -70,7 +68,6 @@ const Policy = ({ setBurgerOpen }) => {
   return (
     <section id="clients-wrapper">
       <div className="relative bg-black">
-        <Navbar setBurgerOpen={setBurgerOpen} />
         <Header />
         <section className="mx-auto  border-b border-b-th-fade text-white">
           <div className="mx-auto max-w-[900px] px-5 text-white">
@@ -82,7 +79,6 @@ const Policy = ({ setBurgerOpen }) => {
             ))}
           </div>
         </section>
-        <Footer />
       </div>
     </section>
   );

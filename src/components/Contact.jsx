@@ -10,7 +10,7 @@ export default function Contact({ className }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <section id="contact" className={cn(" relative  ", className)}>
+    <section id="contact" className={cn("relative", className)}>
       <Image
         className="absolute left-1/2  top-1/2   hidden -translate-x-1/2 -translate-y-1/2  md:block"
         src={bg}

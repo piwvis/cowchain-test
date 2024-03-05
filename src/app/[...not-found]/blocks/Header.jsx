@@ -1,11 +1,13 @@
-import Tag from "components/ui/tag";
+"use client";
+
+import Tag from "@/components/ui/tag";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import ContactForm from "components/utils/ContactForm";
+import ContactForm from "@/components/utils/ContactForm";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
-export const Header = () => {
+export default function Header() {
   const [openForm, setOpenForm] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const {
@@ -40,7 +42,7 @@ export const Header = () => {
   };
 
   return (
-    <section className="scrollbar-none relative -mt-[440px] w-full items-center justify-center overflow-hidden pt-20   text-center md:max-w-full  lg:-mt-[670px] lg:pt-[120px]">
+    <section className="scrollbar-none relative -mt-[440px] w-full items-center justify-center overflow-hidden pt-20   text-center md:max-w-full    lg:pt-[120px]">
       {!isSubmit ? (
         <>
           <div className="relative flex cursor-default flex-col items-center justify-center px-5 pb-8 text-center md:px-8 md:pb-12 lg:items-center lg:px-16 xl:px-24">
@@ -132,4 +134,4 @@ export const Header = () => {
       </div>
     </section>
   );
-};
+}

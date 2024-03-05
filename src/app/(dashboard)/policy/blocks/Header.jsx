@@ -1,5 +1,6 @@
 import React from "react";
-import bg_lg from "assets/bg/clients_header_bg_lg.png";
+import bg_lg from "@/assets/bg/clients_header_bg_lg.png";
+import Image from "next/image";
 
 const Header = () => {
   return (

@@ -25,9 +25,6 @@ const CaseStudiesTriend = lazy(() => import("pages/case-studies/triend"));
 const CaseStudiesFinance = lazy(() => import("pages/case-studies/finance"));
 
 function App() {
-  const [burgerOpen, setBurgerOpen] = useState(false);
-  // document.body.style.overflow = burgerOpen ? "hidden" : "visible";
-
   useEffect(() => {
     // y();
     emailjs.init(import.meta.env.REACT_APP_EMAILJS_PUBLIC_KEY);
